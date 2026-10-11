@@ -1,0 +1,27 @@
+AR TAGS — Webapp PWA com 10 marcadores QR
+
+INICIAR
+- Para testar, sirva esta pasta em um servidor local (ex.: python -m http.server 8000) e abra http://localhost:8000.
+- Para usar a câmera no celular, publique por HTTPS. O navegador exige origem segura para acesso à câmera.
+- No Chrome Android, menu ⋮ > Instalar app / Adicionar à tela inicial.
+
+COMO USAR
+- Os QR Codes prontos estão em assets/qr/ e codificam AR-01 até AR-10.
+- Abra “Editar tags”, selecione uma tag, configure título/tipo/conteúdo e salve.
+- As configurações ficam no localStorage do navegador. Use Exportar configurações para backup e Importar para restaurar.
+- Para imprimir, abra “Meus QR Codes” e toque em Imprimir QR Codes.
+
+CONTEÚDOS OFFLINE
+- Use caminhos relativos como assets/modelo1.glb, assets/musica.mp3 e assets/foto1.jpg; coloque os arquivos na pasta correspondente antes de empacotar.
+- O YouTube requer internet.
+- O protótipo usa BarcodeDetector para ler QR Codes (Chrome Android recente). Se não for suportado, selecione a tag manualmente ou implemente um leitor local.
+- O visualizador model-viewer é carregado de CDN neste protótipo; para 3D totalmente offline, baixe e empacote a biblioteca model-viewer localmente e ajuste o caminho no index.html.
+- A exibição 3D com rotação funciona com GLB/GLTF. O botão AR usa os modos suportados pelo dispositivo/navegador; suporte ARCore depende de Android compatível e do ambiente nativo.
+
+PORTAR PARA APK ANDROID
+- Esta pasta é uma PWA estática, pronta para servir offline parcialmente após primeira instalação.
+- Para APK com câmera/ARCore mais robustos, recomenda-se empacotar a interface com Capacitor e adicionar integração nativa de ARCore/Scene Viewer. O PWA sozinho não garante ARCore em todos os aparelhos.
+- Os caminhos de arquivo precisam ser incluídos no pacote final; o localStorage pertence ao navegador/perfil atual.
+
+OBSERVAÇÃO
+- O arquivo de exemplo de vídeo usa um URL demonstrativo. Substitua-o pelo vídeo desejado no editor.
