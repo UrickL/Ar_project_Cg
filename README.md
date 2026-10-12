@@ -23,3 +23,6 @@ Envie o conteúdo desta pasta para a raiz do repositório GitHub. No Vercel, esc
 
 ## Limitações
 A sobreposição multimídia acompanha a posição 2D do QR detectado pela câmera. Isso não é uma âncora espacial persistente nem rastreamento nativo do ARCore. Para melhor desempenho offline, empacote localmente Three.js, GLTFLoader e jsQR; armazenamento de vídeos grandes depende do espaço disponível no aparelho/navegador.
+## Audiodescrição
+
+Quando uma tag QR é reconhecida, o botão **🔊 Ouvir audiodescrição** fica disponível. Ao tocar, o navegador lê em português do Brasil o texto visível da experiência e do status. Durante a leitura, o mesmo botão permite parar a fala. A voz usa a síntese de fala integrada ao navegador/dispositivo.
