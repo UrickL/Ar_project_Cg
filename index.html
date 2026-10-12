@@ -14,7 +14,40 @@
 <section class="edit-modal hidden" id="editModal"><div class="edit-box"><div class="edit-head"><h2>Editar experiências AR</h2><button class="icon-btn" id="closeEditor" aria-label="Fechar">✕</button></div><div class="tag-map"><b>Tags configuradas:</b><br>AR-01 · Texto flutuante<br>AR-02 · Vídeo offline<br>AR-03, AR-04 e AR-05 · Objetos 3D<br>AR-06 · Áudio com controles<br>AR-07 · Galeria de até 10 imagens<br>AR-08 · Quiz de 5 perguntas ABCD<br>AR-09 e AR-10 · Objetos 3D adicionais<br><small>Os arquivos e as configurações ficam salvos neste navegador/dispositivo. Sem servidor ou banco de dados.</small></div>
 <div class="field"><label for="tagSelect">Tag para editar</label><select id="tagSelect"><option value="1">AR-01 — Texto flutuante</option><option value="2">AR-02 — Vídeo offline</option><option value="3">AR-03 — Objeto 3D</option><option value="4">AR-04 — Objeto 3D</option><option value="5">AR-05 — Objeto 3D</option><option value="6">AR-06 — Áudio</option><option value="7">AR-07 — Galeria de imagens</option><option value="8">AR-08 — Quiz de 5 perguntas</option><option value="9">AR-09 — Objeto 3D</option><option value="10">AR-10 — Objeto 3D</option></select></div>
 <div class="field"><label for="titleInput">Título da experiência</label><input id="titleInput" maxlength="90" placeholder="Título exibido no cartão flutuante"></div>
-<div class="field" id="textField"><label for="textInput">Texto flutuante</label><textarea id="textInput" placeholder="Escreva o texto que aparecerá quando a tag for reconhecida"></textarea></div>
+<div class="field" id="textField"><label for="textInput">Texto flutuante</label><textarea id="textInput" placeholder="Campina Grande - PB
+Campina Grande é um município do Agreste Paraibano, situado no Planalto da Borborema, com 591,656 km², altitude de cerca de 551 m e clima tropical do tipo As', além de população de 440.939 habitantes segundo o Censo 2024.
+Localização e posição regional
+Localiza-se no interior da Paraíba, integrando o Agreste e o Planalto da Borborema
+ .
+Coordenadas: 7°13'50" S, 35°52'52" O
+
+Distância até João Pessoa: 128 km
+
+Área e relevo
+Área territorial: 591,656 km² (IBGE 2025) 
+Relevo variando entre 500 e 600 m de altitude, com áreas mais acidentadas ao nordeste, em direção a Lagoa Seca 
+
+Localizada sobre serras e alinhamentos como Serra do Monte, Catuama e Bodopitá
+
+Hidrografia
+Área de dispersão entre bacias:
+Afluentes do Rio Paraíba do Norte (sul e sudeste)
+Afluentes do Rio Mamanguape (norte e nordeste)
+
+População e densidade
+População (Censo 2024): 440.939 habitantes
+1
+ .
+Densidade demográfica: 745,3 hab/km²
+
+Limites municipais
+Norte: Lagoa Seca, Massaranduba, Pocinhos, Puxinanã
+Sul: Boqueirão, Caturité, Fagundes, Queimadas
+Leste: Riachão do Bacamarte
+Oeste: Boa Vista
+
+nserção metropolitana
+Cidade-sede da Região Metropolitana de Campina Grande, com 19 municípios e 651.619 habitantes (IBGE 2022)"></textarea></div>
 <div class="field hidden" id="videoField"><label for="videoInput">Vídeo offline (MP4/WebM)</label><input id="videoInput" type="file" accept="video/mp4,video/webm,video/quicktime"><small>Selecione o arquivo no aparelho. O vídeo será armazenado localmente neste navegador.</small><div id="videoSaved"></div></div>
 <div class="field hidden" id="modelField"><label for="modelInput">Modelo 3D (.GLB)</label><input id="modelInput" type="file" accept=".glb,model/gltf-binary"><small>Use um arquivo .GLB válido (com malhas e materiais incluídos). Após carregar, salve e aponte a câmera para a tag.</small><div id="modelSaved"></div></div>
 <div class="field hidden" id="audioField"><label for="audioInput">Arquivo de áudio offline (MP3, WAV, OGG)</label><input id="audioInput" type="file" accept="audio/*"><small>O cartão terá botões para executar e parar o áudio.</small><div id="audioSaved"></div></div>
