@@ -1,21 +1,25 @@
-# AR Tags — front-end câmera e realidade aumentada
+# AR Tags — experiências multimídia front-end
 
-Aplicação front-end estática para Android e desktop. Abre a câmera traseira, procura continuamente os QR Codes `AR-01` a `AR-10` e exibe um objeto 3D demonstrativo ou um modelo `.glb` correspondente.
+Webapp estático para Android/desktop: abre a câmera em tela cheia, reconhece QR Codes `AR-01` a `AR-10` e mostra uma experiência flutuante para cada tag.
 
-## Publicação no Vercel
-- Envie o conteúdo desta pasta para a raiz do repositório GitHub.
-- Framework preset: Other.
-- Build command: vazio.
-- Output directory: `.`.
-- Acesse pelo endereço HTTPS publicado no Vercel.
+## Mapa inicial das tags
+- AR-01: texto flutuante editável
+- AR-02: vídeo local/offline (arquivo MP4/WebM)
+- AR-03, AR-04, AR-05: três experiências 3D
+- AR-06: áudio local com botões Executar e Parar
+- AR-07: galeria local de até 10 imagens
+- AR-08: quiz com 5 perguntas e alternativas A, B, C e D
+- AR-09 e AR-10: experiências 3D adicionais
 
-## Permissões e leitor QR
-A página solicita acesso à câmera ao iniciar. Se a solicitação automática for bloqueada pelo navegador, toque em **Abrir câmera**. O acesso à câmera exige HTTPS (ou localhost durante desenvolvimento) e permissão do usuário.
+O pedido lista oito funções/tags principais (texto, vídeo, três objetos 3D, áudio, galeria e quiz), então as funções foram distribuídas nas tags AR-01 a AR-08; AR-09 e AR-10 continuam disponíveis para modelos 3D.
 
-A leitura usa `BarcodeDetector` quando disponível e tenta usar `jsQR` como alternativa carregada via CDN. Portanto, a primeira utilização do leitor alternativo exige internet.
+## Editar conteúdo
+Toque no botão ⚙ no canto superior direito. Escolha uma tag, edite o texto/título ou carregue arquivos de vídeo, áudio, modelo 3D e até 10 imagens. No quiz, preencha as cinco perguntas, quatro alternativas e escolha a resposta correta. Toque em “Salvar nesta máquina”.
 
-## Modelos 3D
-Coloque os arquivos em `assets/models/` com os nomes `object-01.glb` até `object-10.glb`. Na ausência do arquivo, é exibido um objeto demonstrativo.
+Os conteúdos são salvos localmente no navegador usando IndexedDB/localStorage; não há backend nem sincronização entre dispositivos. Para que os arquivos de mídia funcionem offline, carregue-os previamente por esse editor no aparelho. A biblioteca Three.js e o leitor QR alternativo ainda são carregados pela internet.
+
+## Publicar no GitHub/Vercel
+Envie o conteúdo desta pasta para a raiz do repositório GitHub. No Vercel, escolha Framework Preset `Other`, deixe Build Command vazio e use `.` como Output Directory. Use o domínio HTTPS para permitir a câmera.
 
 ## Limitações
-Este é um protótipo web. O objeto acompanha a posição 2D do QR detectado na imagem, mas não é uma âncora espacial persistente nem substitui rastreamento nativo do ARCore. As bibliotecas são carregadas por CDN e não estão totalmente offline.
+A sobreposição multimídia acompanha a posição 2D do QR detectado pela câmera. Isso não é uma âncora espacial persistente nem rastreamento nativo do ARCore. Para melhor desempenho offline, empacote localmente Three.js, GLTFLoader e jsQR; armazenamento de vídeos grandes depende do espaço disponível no aparelho/navegador.
